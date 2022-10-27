@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	<title>Delete flat detail</title>
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<h3 class="text-center"> DELETE FLAT DETAILS </h3>
+		{% for error in errors %}
+			<div class="alert alert-danger" role="alert">
+				{{ error }}
+			</div>
+		{% endfor %}
+
+		<div id="result" class="text-danger"></div></br>
+		<table class="table">
+  			<thead>
+    			<tr>
+      				<th scope="col">S.No.</th>
+      				<th scope="col">Monthly Rent</th>
+      				<th scope="col">Description</th>
+      				<th scope="col">Action</th>
+    			</tr>
+  			</thead>
+  			<tbody>
+				{% for flat in flats %}
+    			<tr>
+      				<th scope="row">{{ loop.index }}</th>
+      				<td>{{flat.monthly_rent }}</td>
+      				<td>{{flat.description }}</td>
+      				<td>
+						<button type="button" class="btn btn-danger" onclick="delete_flat({{flat.id}})">Delete</button>
+					</td>
+    			</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}
+{% block script %}
+
+	<script >
+		function delete_flat(id)
+		{
+			fetch("/flat/delete/"+id, {method:'DELETE'})
+			.then(response => response.json())
+			.then(data => document.getElementById("result").innerHTML = data.message+". Kindly refresh the page")
+		}
+	</script>
+{% endblock %}

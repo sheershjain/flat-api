@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	<title>Flat Detail</title>
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<h1>Flat Detail</h1>
+		<table class="table">
+		  <tbody>
+   			 <tr>
+     			 <th scope="row">Floor_no</th>
+     			 <td>{{flat.floor_no}}</td>
+    		</tr>
+			<tr>
+				<th scope="row">Rooms</th>
+				<td>{{flat.rooms}}</td>
+		  </tr>
+			<tr>
+				<th scope="row">Halls</th>
+				<td>{{flat.halls}}</td>
+	  		</tr>
+			  <tr>
+				<th scope="row">Monthly Rent</th>
+				<td>{{flat.monthly_rent}}</td>
+		  	</tr>
+    		
+    		<tr>
+      			<th scope="row">Date Posted</th>
+      			<td colspan="2">{{flat.date_posted}}</td>
+    		</tr>
+			<tr>
+				<th scope="row">Description</th>
+				<td>{{flat.description}}</td>
+		  </tr>
+			<tr>
+				<th scope="row">Owner</th>
+				<td colspan="2">{{flat.owner_id}}</td>
+			</tr>
+  		</tbody>
+	  </table>
+	</div>
+{% endblock %}

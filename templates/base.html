@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<head>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">	
+
+    {% block title %}
+    {% endblock %}
+</head>
+
+<body>
+    {% include "navbar.html" %}
+    <style>
+        body {
+            background-image: url("{{ url_for('static', path='images/image4.jpeg') }}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+    <!-- <img src="{{ url_for('static', path='images/image.jpg') }}" alt="Italian Trulli"> -->
+    {% block content %}
+    {% endblock %}
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>    
+	{% block script %}
+    {% endblock %}
+
+
+</body>
+</html>

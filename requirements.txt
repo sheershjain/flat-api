@@ -1,0 +1,14 @@
+fastapi[all]
+sqlalchemy[all]
+uvicorn
+python-dotenv
+psycopg2-binary
+pydantic[email]
+passlib[bcrypt]
+pytest
+requests
+pytest-cov
+python-multipart
+python-jose
+jinja2
+alembic

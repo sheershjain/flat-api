@@ -1,0 +1,8 @@
+__pycache__
+env
+.env
+.DS_Store 
+.pytest_cache 
+.coveragerc
+.coverage 
+sheersh.db
